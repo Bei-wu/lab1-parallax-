@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Shared settings for all scenes */
+.parallax {
+  position: relative;
+  height: 100vh;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Basic parallax effect */
+  background-attachment: fixed;
+
+  /* Center the text card */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+/* Soft transition between sections */
+.parallax::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 140px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 190, 130, 0),
+    rgba(255, 190, 130, 0.75)
+  );
+
+  pointer-events: none;
+}
+
+/* Scene 1 */
+.balloons {
+  background-image: url("balloon.jpg");
+}
+
+/* Scene 2 */
+.sunset {
+  background-image: url("sunset.jpg");
+  margin-top: -40px;
+}
+
+/* Scene 3 */
+.home {
+  background-image: url("home.jpg");
+}
+
+/* Text card */
+.card {
+  position: relative;
+  z-index: 2;
+
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 25px 40px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 500px;
+
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Heading */
+.card h1 {
+  margin: 0 0 10px;
+  font-size: 40px;
+}
+
+/* Paragraph */
+.card p {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.5;
+}
